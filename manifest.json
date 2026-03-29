@@ -1,0 +1,55 @@
+﻿{
+  "manifest_version": 3,
+  "name": "AI 回复提醒",
+  "description": "在 ChatGPT 和 Gemini 回答完成后发送提醒。",
+  "version": "0.6.0",
+  "permissions": [
+    "notifications",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": [
+        "settings.js",
+        "detector.js",
+        "state.js",
+        "debugPanel.js",
+        "observer.js",
+        "activityTracker.js",
+        "notifier.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "AI 回复提醒",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  }
+}

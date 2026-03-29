@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 回复提醒设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="container">
+    <h1>AI 回复提醒设置</h1>
+    <p class="description">你可以在这里调整提醒开关、提醒模式与调试显示。</p>
+
+    <form id="settings-form" class="settings-form">
+      <label class="checkbox-row">
+        <input type="checkbox" id="enableChatGPT">
+        <span>启用 ChatGPT 提醒</span>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="enableGemini">
+        <span>启用 Gemini 提醒</span>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="enableSystemNotification">
+        <span>启用系统通知</span>
+      </label>
+
+      <label class="select-row" for="notifyMode">
+        <span>提醒模式</span>
+        <select id="notifyMode">
+          <option value="background_only">仅后台提醒</option>
+          <option value="background_or_inactive">后台或无操作时提醒</option>
+          <option value="always">始终提醒</option>
+        </select>
+      </label>
+
+      <label class="number-row" for="inactivityThresholdSec">
+        <span>无操作判定时间（秒）</span>
+        <input type="number" id="inactivityThresholdSec" min="1" max="7200" step="1">
+      </label>
+
+      <label class="number-row" for="notificationCooldownSec">
+        <span>提醒冷却时间（秒）</span>
+        <input type="number" id="notificationCooldownSec" min="1" max="3600" step="1">
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="showDebugPanel">
+        <span>显示调试面板</span>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="enableDebugLogs">
+        <span>启用调试日志</span>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="primary">保存设置</button>
+        <button type="button" id="reset-btn" class="secondary">恢复默认</button>
+      </div>
+
+      <p id="status-text" class="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="settings.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

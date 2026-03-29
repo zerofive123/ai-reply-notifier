@@ -1,0 +1,60 @@
+﻿/* popup.css */
+
+body {
+  margin: 0;
+  padding: 12px;
+  width: 320px;
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.summary {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.summary h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.summary ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.summary li {
+  margin: 4px 0;
+}
+
+.primary {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.status {
+  min-height: 18px;
+  margin: 0;
+  color: #334155;
+  font-size: 12px;
+}
